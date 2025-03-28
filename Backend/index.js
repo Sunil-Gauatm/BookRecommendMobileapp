@@ -2,12 +2,14 @@ import express from "express"
 import mongoose from "mongoose"
 import { UserModel } from "./models/users.js"
 import Userrouter from "./routes/UserAuth.js"
+import Bookrouter from "./routes/BooksRoute.js"
 
 const app = express()
 const port = 3000
 
 app.use(express.json())
 app.use('/auth', Userrouter)
+app.use('./books',Bookrouter)
 app.get('/', (req, res) => {
   res.send('Hello World!!!!')
 })

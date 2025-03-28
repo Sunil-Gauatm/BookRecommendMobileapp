@@ -1,7 +1,6 @@
-import { number, ref, required } from "joi";
 import mongoose from "mongoose";
 
-const books = mongoose.Schema({
+const bookSchema = mongoose.Schema({
     title : {
         type : String,
         required : true
@@ -15,7 +14,7 @@ const books = mongoose.Schema({
     required: true
    },
    rating:{
-    type: number,
+    type: Number,
     required: true,
     min:1,
     max:5
@@ -29,3 +28,5 @@ const books = mongoose.Schema({
 },{
     timestamps : true
 })
+export const BookModel = mongoose.model('Book', bookSchema)
+
