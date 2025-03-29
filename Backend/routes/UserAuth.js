@@ -1,5 +1,4 @@
 import express from "express"
-import {signupValidation} from '../middlewares/authvalidation.js'
 import {signup} from '../controller/authController.js'
 import {login} from '../controller/authController.js'
 
